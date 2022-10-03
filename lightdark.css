@@ -1,0 +1,170 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: "open-sans";
+    background: #2a3e50;
+    color: #eaf0f1;
+    line-height: 1.618em;
+}
+.wrapper{
+    width: 100%;
+    max-width: 70%;
+    min-height: 200vh;
+    border: 2px solid red;
+    /* background-color: red; */
+    margin: 50px auto;
+}
+.tabs{
+    position: relative;
+    margin: 50px;
+}
+.switch{
+    display: none;
+}
+.tab-content{
+    border: 2px solid red;
+    width: 100%;
+    min-height: 150vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px;
+    background-color: yellow;
+    color: black;
+    grid-gap: 10px;
+    opacity: 0;    
+}
+.switch:checked +label+ .tab-content{
+    opacity: 1;
+    z-index: 2;
+    transition: all 3s ease ;
+}
+.tab{
+    float: right;
+}
+.tab-content{
+    position: absolute;
+    left: 0;
+    top: 2.75em;
+    height: 12rem;
+}
+.tab-label{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+}
+.tab-label:hover{
+    color: red;
+    font-family: sans-serif;
+    position: relative;
+}
+.tab-label::before{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: -10px;
+    width: 100%;
+    background-color: red;
+    transform-origin: right top;
+    transform: scale(0,1);
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+
+}
+.tab-label:hover::before{
+    transform-origin: right top;
+    transform: scale(1,1);
+    color: red;
+}
+.switch:checked + .tab-label{
+    color: red;
+    
+}
+
+/* grid Section  */
+.grid-items{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+.item1{
+    grid-area: 1/1/3/2;
+    position: relative;
+    overflow: hidden;
+}
+#pic1{
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    border-radius: 20px;
+}
+.item1-overlay{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 0px;
+    border-radius: 20px;
+    margin: 10px 10px;
+    background-color: black;
+    opacity: 0;
+    transition: all 1s ease;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+.item1-overlay h1{
+    font-size: 24px;
+    font-weight: lighter;
+}
+.item1-overlay i{
+    color: red;
+    font-size: 28px;
+}
+.item1:hover .item1-overlay{
+    opacity: 0.8;
+    padding-top: 40px;
+}
+.item1:hover #pic1{
+    transform: scale(1.2);
+}
+.pic1{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.item2{
+    grid-area: 1/2/4/3;
+}
+.item3{
+    grid-area: 1/3/3/4;
+}
+.item4{
+    grid-area: 3/1/5/2;
+}
+.item5{
+    grid-area: 4/2/6/3;
+}
+.item6{
+    grid-area: 3/3/5/4;
+}
+.item7{
+    grid-area: 5/1/6/2;
+}
+.item8{
+    grid-area: 6/2/8/3;
+}
+.item9{
+    grid-area: 5/3/6/4;
+}
+.item10{
+    grid-area: 6/1/7/2;
+}
+.item11{
+    grid-area: 6/3/7/4;
+}
+.item12{
+    grid-area: 7/1/8/2;
+}
+.item13{
+    grid-area: 7/3/8/4;
+}
